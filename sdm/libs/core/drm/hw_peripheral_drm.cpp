@@ -238,7 +238,7 @@ void HWPeripheralDRM::GetHWPanelMaxBrightness() {
   // means that the connector_type_id - 1 will reflect the same # as the panel # for panel node.
   char s[kMaxStringLength] = {};
   snprintf(s, sizeof(s), "/sys/class/backlight/panel%d-backlight/",
-           static_cast<int>(connector_info_.type_id - 1));
+           static_cast<int>(connector_info_.type_id));
   brightness_base_path_.assign(s);
 
   std::string brightness_node(brightness_base_path_ + "max_brightness");
